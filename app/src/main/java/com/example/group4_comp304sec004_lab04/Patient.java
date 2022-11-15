@@ -1,5 +1,7 @@
 package com.example.group4_comp304sec004_lab04;
 
+
+
 @Entity
 public class Patient {
     private int patientId;
