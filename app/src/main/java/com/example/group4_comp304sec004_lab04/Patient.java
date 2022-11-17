@@ -1,62 +1,65 @@
 package com.example.group4_comp304sec004_lab04;
 
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
-import android.arch.persistence.room.Entity;
-
-@Entity
+@Entity(tableName = "patient_table")
 public class Patient {
-    private int patientId;
-    private String firstname;
-    private String lastname;
+
+    @PrimaryKey(autoGenerate = true)
+    private int patientID;
+
+    @NonNull
+    private String firstName;
+
+    @NonNull
+    private String lastName;
+
+    @NonNull
     private String department;
-    private int nurseId;
-    private int room;
 
-    public int getPatientId() {
-        return patientId;
+    @NonNull
+    private int nurseID;
+
+    @NonNull
+    private String room;
+
+    public Patient(@NonNull String firstName, @NonNull String lastName, @NonNull String department, @NonNull int nurseID, @NonNull String room) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.department = department;
+        this.nurseID = nurseID;
+        this.room = room;
     }
 
-    public void setPatientId(int patientId) {
-        this.patientId = patientId;
+    public void setPatientID(int patientID) {this.patientID = patientID;}
+
+    public int getPatientID() {
+        return patientID;
     }
 
-    public String getFirstname() {
-        return firstname;
+    @NonNull
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    @NonNull
+    public String getLastName() {
+        return lastName;
     }
 
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
-
+    @NonNull
     public String getDepartment() {
         return department;
     }
 
-    public void setDepartment(String department) {
-        this.department = department;
+    public int getNurseID() {
+        return nurseID;
     }
 
-    public int getNurseId() {
-        return nurseId;
-    }
-
-    public void setNurseId(int nurseId) {
-        this.nurseId = nurseId;
-    }
-
-    public int getRoom() {
+    @NonNull
+    public String getRoom() {
         return room;
-    }
-
-    public void setRoom(int room) {
-        this.room = room;
     }
 }

@@ -1,6 +1,6 @@
 package com.example.group4_comp304sec004_lab04;
 
-import android.arch.persistence.room.Entity;
+import androidx.room.Entity;
 
 @Entity
 public class Nurse {
