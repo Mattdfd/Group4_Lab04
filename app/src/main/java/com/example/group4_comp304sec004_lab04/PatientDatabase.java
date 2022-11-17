@@ -4,7 +4,6 @@ import android.content.Context;
 
 import androidx.annotation.NonNull;
 import androidx.room.Database;
-import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
@@ -23,14 +22,14 @@ public abstract class PatientDatabase extends RoomDatabase {
 
     static PatientDatabase getDatabase(final Context context) {
         if (INSTANCE == null) {
-            synchronized (TestDatabase.class) {
-                if (INSTANCE == null) {
-                    INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                                    PatientDatabase.class, "patient_database")
-                            .addCallback(sRoomDatabaseCallback)
-                            .build();
-                }
-            }
+//            synchronized (TestDatabase.class) {
+//                if (INSTANCE == null) {
+//                    INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
+//                                    PatientDatabase.class, "patient_database")
+//                            .addCallback(sRoomDatabaseCallback)
+//                            .build();
+//                }
+//            }
         }
         return INSTANCE;
     }

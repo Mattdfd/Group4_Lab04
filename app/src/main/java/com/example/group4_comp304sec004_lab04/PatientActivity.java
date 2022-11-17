@@ -1,21 +1,20 @@
 package com.example.group4_comp304sec004_lab04;
 
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Toast;
-
-import com.google.android.material.textfield.TextInputEditText;
-
 public class PatientActivity extends AppCompatActivity {
     private PatientViewModel patientViewModel;
-    private TextInputEditText firstName;
-    private TextInputEditText lastName;
-    private TextInputEditText department;
-    private TextInputEditText nurseID;
-    private TextInputEditText room;
+    private EditText firstName;
+    private EditText lastName;
+    private EditText department;
+    private EditText nurseID;
+    private EditText room;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +25,11 @@ public class PatientActivity extends AppCompatActivity {
     }
 
     public void createPatientButton(View view) {
-        firstName = (TextInputEditText)findViewById(R.id.firstName);
-        lastName = (TextInputEditText)findViewById(R.id.lastName);
-        department = (TextInputEditText)findViewById(R.id.department);
-        nurseID = (TextInputEditText)findViewById(R.id.nurseID);
-        room = (TextInputEditText)findViewById(R.id.room);
+        firstName = (EditText) findViewById(R.id.firstName);
+        lastName = (EditText)findViewById(R.id.lastName);
+        department = (EditText)findViewById(R.id.department);
+        nurseID = (EditText)findViewById(R.id.nurseID);
+        room = (EditText)findViewById(R.id.room);
         if (firstName.getText().toString().length() != 0 && lastName.getText().toString().length() != 0
                 && department.getText().toString().length() != 0 &&
                 nurseID.getText().toString().length() != 0 &&

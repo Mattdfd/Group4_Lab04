@@ -3,9 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Comp304/Lab04/app/src/main/res/layout/activity_login.xml" value="0.1" />
-        <entry key="..\:/Comp304/Lab04/app/src/main/res/layout/activity_login2.xml" value="0.1" />
-        <entry key="..\:/Comp304/Lab04/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_patient.xml" value="0.1497584541062802" />
       </map>
     </option>
   </component>
