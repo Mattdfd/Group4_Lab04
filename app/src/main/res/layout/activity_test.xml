@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TestActivity">
+
+
+    <EditText
+        android:id="@+id/patientIDTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter Patient ID"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/nurseIDTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/patientIDTest"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Enter Nurse ID"/>
+
+    <EditText
+        android:id="@+id/bpl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nurseIDTest"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Enter BPL" />
+
+    <EditText
+        android:id="@+id/bph"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bpl"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Enter BPL" />
+
+    <EditText
+        android:id="@+id/temprature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bph"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Enter Temprature" />
+
+    <Button
+        android:id="@+id/addTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/temprature"
+        android:layout_centerHorizontal="true"
+        android:text="ADD TEST"/>
+
+    <Button
+        android:id="@+id/viewTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addTest"
+        android:layout_centerHorizontal="true"
+        android:text="VIEW TEST INFO"/>
+
+</RelativeLayout>

@@ -5,8 +5,10 @@
       <map>
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/activity_patient.xml" value="0.1497584541062802" />
+        <entry key="app/src/main/res/layout/activity_patient.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_test.xml" value="0.34479166666666666" />
         <entry key="app/src/main/res/layout/activity_view_patient.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/activity_view_test_info.xml" value="0.34479166666666666" />
       </map>
     </option>
   </component>

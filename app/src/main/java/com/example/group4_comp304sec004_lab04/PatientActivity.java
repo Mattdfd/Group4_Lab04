@@ -17,7 +17,7 @@ public class PatientActivity extends AppCompatActivity {
     private EditText department;
     private EditText nurseID;
     private EditText room;
-    Button viewPatients;
+    Button viewPatients, enterTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,15 @@ public class PatientActivity extends AppCompatActivity {
         patientViewModel = new ViewModelProvider(this).get(PatientViewModel.class);
 
         viewPatients = findViewById(R.id.viewPatient);
+        enterTest = findViewById(R.id.enterTest);
+
+        enterTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), TestActivity.class);
+                startActivity(intent);
+            }
+        });
 
         viewPatients.setOnClickListener(new View.OnClickListener() {
             @Override

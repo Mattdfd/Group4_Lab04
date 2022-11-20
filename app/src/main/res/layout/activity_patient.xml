@@ -75,6 +75,15 @@
         android:layout_centerHorizontal="true"
         android:text="VIEW PATIENTS"/>
 
+    <Button
+        android:id="@+id/enterTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewPatient"
+        android:layout_centerHorizontal="true"
+        android:text="ENTER OR VIEW TEST DATA"/>
+
+
 
 
 
