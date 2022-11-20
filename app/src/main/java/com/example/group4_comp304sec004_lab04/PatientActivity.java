@@ -1,7 +1,9 @@
 package com.example.group4_comp304sec004_lab04;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -15,6 +17,7 @@ public class PatientActivity extends AppCompatActivity {
     private EditText department;
     private EditText nurseID;
     private EditText room;
+    Button viewPatients;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +25,16 @@ public class PatientActivity extends AppCompatActivity {
         setContentView(R.layout.activity_patient);
 
         patientViewModel = new ViewModelProvider(this).get(PatientViewModel.class);
+
+        viewPatients = findViewById(R.id.viewPatient);
+
+        viewPatients.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(),view_Patient.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void createPatientButton(View view) {

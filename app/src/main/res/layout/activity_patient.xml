@@ -66,5 +66,15 @@
         android:layout_below="@+id/room"
         android:layout_centerHorizontal="true"
         android:text="ENTER PATIENT"/>
+    <Button
+        android:id="@+id/viewPatient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/enterPatient"
+        android:layout_centerHorizontal="true"
+        android:text="VIEW PATIENTS"/>
+
+
+
 
 </RelativeLayout>
