@@ -63,6 +63,7 @@
         android:id="@+id/enterPatient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="createPatientButton"
         android:layout_below="@+id/room"
         android:layout_centerHorizontal="true"
         android:text="ENTER PATIENT"/>

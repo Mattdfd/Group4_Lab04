@@ -31,7 +31,7 @@ public class PatientActivity extends AppCompatActivity {
         viewPatients.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getBaseContext(),view_Patient.class);
+                Intent intent = new Intent(getBaseContext(), ViewPatientInfo.class);
                 startActivity(intent);
             }
         });
