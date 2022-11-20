@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".PatientActivity">
 
-
     <TextView
         android:id="@+id/personalInfo"
         android:layout_width="wrap_content"

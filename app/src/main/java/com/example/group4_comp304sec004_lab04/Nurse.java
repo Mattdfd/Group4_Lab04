@@ -1,14 +1,33 @@
 package com.example.group4_comp304sec004_lab04;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
-@Entity
+@Entity(tableName = "nurse_table")
 public class Nurse {
+
+    @PrimaryKey(autoGenerate = true)
     private int nurseId;
+
+    @NonNull
     private String firstname;
+
+    @NonNull
     private String lastname;
+
+    @NonNull
     private String department;
+
+    @NonNull
     private String password;
+
+    public Nurse(@NonNull String firstname, @NonNull String lastname, @NonNull String department, @NonNull String password) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.department = department;
+        this.password = password;
+    }
 
     public int getNurseId() {
         return nurseId;
@@ -18,35 +37,26 @@ public class Nurse {
         this.nurseId = nurseId;
     }
 
+    @NonNull
     public String getFirstname() {
         return firstname;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
 
+    @NonNull
     public String getLastname() {
         return lastname;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
 
+    @NonNull
     public String getDepartment() {
         return department;
     }
 
-    public void setDepartment(String department) {
-        this.department = department;
-    }
-
+    @NonNull
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }
