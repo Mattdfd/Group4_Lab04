@@ -1,4 +1,4 @@
-package com.example.group4_comp304sec004_lab04;
+package com.example.AqeishParvez_MatthewMikhaiel_COMP304Sec004_Lab4_Ex1;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -56,29 +56,31 @@ Login extends AppCompatActivity {
     }
 
     public void findNurse(){
-        AtomicBoolean found = new AtomicBoolean(false);
-        int id = Integer.parseInt(nurseID.getText().toString());
-        nurseViewModel.getAllNurses().observe(this, (Observer<List<Nurse>>) nurses -> {
-            for (Nurse nurse : nurses)
-            {
-                if (nurse.getNurseId()==id && password.getText().toString().equals(nurse.getPassword())){
-                    found.set(true);
-                    editor.putString("ID",nurseID.getText().toString());
-                    editor.putString("Password",password.getText().toString());
-                    editor.commit();
-                    Toast.makeText(this, "Log in successful", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getBaseContext(), PatientActivity.class);
-                    startActivity(intent);
-                    break;
+        if (nurseID.getText().toString().isEmpty()){
+            Toast.makeText(this, "One or more fields are empty", Toast.LENGTH_SHORT).show();
+        } else {
+            AtomicBoolean found = new AtomicBoolean(false);
+            int id = Integer.parseInt(nurseID.getText().toString());
+            nurseViewModel.getAllNurses().observe(this, (Observer<List<Nurse>>) nurses -> {
+                for (Nurse nurse : nurses) {
+                    if (nurse.getNurseId() == id && password.getText().toString().equals(nurse.getPassword())) {
+                        found.set(true);
+                        editor.putString("ID", nurseID.getText().toString());
+                        editor.putString("Password", password.getText().toString());
+                        editor.commit();
+                        Toast.makeText(this, "Log in successful", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getBaseContext(), PatientActivity.class);
+                        startActivity(intent);
+                        break;
+                    }
                 }
-            }
 
-            if (!found.get()){
-                Toast.makeText(Login.this, "Id or password incorrect", Toast.LENGTH_SHORT).show();
-            }
+                if (!found.get()) {
+                    Toast.makeText(Login.this, "Id or password incorrect", Toast.LENGTH_SHORT).show();
+                }
 
-        });
-
+            });
+        }
 
     }
 }

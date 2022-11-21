@@ -6,7 +6,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.group4_comp304sec004_lab04"
+        applicationId "com.example.AqeishParvez_MatthewMikhaiel_COMP304Sec004_Lab4_Ex1"
         minSdk 30
         targetSdk 32
         versionCode 1

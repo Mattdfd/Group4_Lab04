@@ -1,4 +1,4 @@
-package com.example.group4_comp304sec004_lab04;
+package com.example.AqeishParvez_MatthewMikhaiel_COMP304Sec004_Lab4_Ex1;
 
 import android.content.Context;
 
@@ -11,22 +11,22 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Patient.class}, version = 1, exportSchema = false)
-public abstract class PatientDatabase extends RoomDatabase {
+@Database(entities = {Test.class}, version = 1, exportSchema = false)
+public abstract class TestDatabase extends RoomDatabase {
 
-    public abstract PatientDao patientDao();
+    public abstract TestDao testDao();
 
-    private static volatile PatientDatabase INSTANCE;
+    private static volatile TestDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;
     static final ExecutorService databaseWriteExecutor =
             Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 
-    static PatientDatabase getDatabase(final Context context) {
+    static TestDatabase getDatabase(final Context context) {
         if (INSTANCE == null) {
-            synchronized (PatientDatabase.class) {
+            synchronized (TestDatabase.class) {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                                    PatientDatabase.class, "patient_database")
+                                    TestDatabase.class, "test_database")
                             .addCallback(sRoomDatabaseCallback)
                             .build();
                 }
@@ -42,13 +42,13 @@ public abstract class PatientDatabase extends RoomDatabase {
 
             // If you want to keep data through app restarts,
             // comment out the following block
-            //            databaseWriteExecutor.execute(() -> {
-            //                // Populate the database in the background.
-            //                // If you want to start with more patients, just add them.
-            //                PatientDao dao = INSTANCE.patientDao();
-            //                dao.deleteAll();
-            //            });
+//            databaseWriteExecutor.execute(() -> {
+//                // Populate the database in the background.
+//                // If you want to start with more patients, just add them.
+//                TestDao dao = INSTANCE.testDao();
+//                dao.deleteAll();
+//            });
         }
     };
-}
 
+}

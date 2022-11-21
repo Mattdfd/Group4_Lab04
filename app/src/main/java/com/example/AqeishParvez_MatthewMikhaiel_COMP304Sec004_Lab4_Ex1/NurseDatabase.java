@@ -1,4 +1,4 @@
-package com.example.group4_comp304sec004_lab04;
+package com.example.AqeishParvez_MatthewMikhaiel_COMP304Sec004_Lab4_Ex1;
 
 import android.content.Context;
 
@@ -11,22 +11,22 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Test.class}, version = 1, exportSchema = false)
-public abstract class TestDatabase extends RoomDatabase {
+@Database(entities = {Nurse.class}, version = 1, exportSchema = false)
+public abstract class NurseDatabase extends RoomDatabase {
 
-    public abstract TestDao testDao();
+    public abstract NurseDao nurseDao();
 
-    private static volatile TestDatabase INSTANCE;
+    private static volatile NurseDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;
     static final ExecutorService databaseWriteExecutor =
             Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 
-    static TestDatabase getDatabase(final Context context) {
+    static NurseDatabase getDatabase(final Context context) {
         if (INSTANCE == null) {
-            synchronized (TestDatabase.class) {
+            synchronized (NurseDatabase.class) {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                                    TestDatabase.class, "test_database")
+                                    NurseDatabase.class, "nurse_database")
                             .addCallback(sRoomDatabaseCallback)
                             .build();
                 }
@@ -45,7 +45,7 @@ public abstract class TestDatabase extends RoomDatabase {
 //            databaseWriteExecutor.execute(() -> {
 //                // Populate the database in the background.
 //                // If you want to start with more patients, just add them.
-//                TestDao dao = INSTANCE.testDao();
+//                NurseDao dao = INSTANCE.nurseDao();
 //                dao.deleteAll();
 //            });
         }

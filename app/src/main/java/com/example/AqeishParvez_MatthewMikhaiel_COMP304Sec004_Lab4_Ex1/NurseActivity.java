@@ -1,4 +1,4 @@
-package com.example.group4_comp304sec004_lab04;
+package com.example.AqeishParvez_MatthewMikhaiel_COMP304Sec004_Lab4_Ex1;
 
 import android.os.Bundle;
 import android.view.View;

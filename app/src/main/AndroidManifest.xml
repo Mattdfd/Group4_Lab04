@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.group4_comp304sec004_lab04">
+    package="com.example.AqeishParvez_MatthewMikhaiel_COMP304Sec004_Lab4_Ex1">
 
     <application
         android:allowBackup="true"
@@ -14,28 +14,28 @@
         android:theme="@style/Theme.Group4_Comp304Sec004_Lab04"
         tools:targetApi="31">
         <activity
-            android:name=".NurseActivity"
+            android:name="com.example.AqeishParvez_MatthewMikhaiel_COMP304Sec004_Lab4_Ex1.NurseActivity"
             android:exported="false" />
         <activity
-            android:name=".UpdatePatientInfo"
+            android:name="com.example.AqeishParvez_MatthewMikhaiel_COMP304Sec004_Lab4_Ex1.UpdatePatientInfo"
             android:exported="false" />
         <activity
-            android:name=".TestActivity"
+            android:name="com.example.AqeishParvez_MatthewMikhaiel_COMP304Sec004_Lab4_Ex1.TestActivity"
             android:exported="false" />
         <activity
-            android:name=".ViewTestInfo"
+            android:name="com.example.AqeishParvez_MatthewMikhaiel_COMP304Sec004_Lab4_Ex1.ViewTestInfo"
             android:exported="false" />
         <activity
-            android:name=".ViewPatientInfo"
+            android:name="com.example.AqeishParvez_MatthewMikhaiel_COMP304Sec004_Lab4_Ex1.ViewPatientInfo"
             android:exported="false" />
         <activity
-            android:name=".PatientActivity"
+            android:name="com.example.AqeishParvez_MatthewMikhaiel_COMP304Sec004_Lab4_Ex1.PatientActivity"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name="com.example.AqeishParvez_MatthewMikhaiel_COMP304Sec004_Lab4_Ex1.Login"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.AqeishParvez_MatthewMikhaiel_COMP304Sec004_Lab4_Ex1.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

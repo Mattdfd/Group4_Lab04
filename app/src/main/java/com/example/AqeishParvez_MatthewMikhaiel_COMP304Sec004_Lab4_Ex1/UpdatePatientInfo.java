@@ -1,4 +1,4 @@
-package com.example.group4_comp304sec004_lab04;
+package com.example.AqeishParvez_MatthewMikhaiel_COMP304Sec004_Lab4_Ex1;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -55,6 +55,7 @@ public class UpdatePatientInfo extends AppCompatActivity {
         department = (EditText)findViewById(R.id.departmentUI);
         nurseID = (EditText)findViewById(R.id.nurseIDUI);
         room = (EditText)findViewById(R.id.roomUI);
+        AtomicBoolean found = new AtomicBoolean(false);
 
         if (patientID.getText().toString().length()!=0 && firstName.getText().toString().length() != 0 && lastName.getText().toString().length() != 0
                 && department.getText().toString().length() != 0 &&
@@ -66,7 +67,6 @@ public class UpdatePatientInfo extends AppCompatActivity {
             String departmentValue = department.getText().toString();
             int nurseIDValue = Integer.parseInt(nurseID.getText().toString());
             String roomValue = room.getText().toString();
-            AtomicBoolean found = new AtomicBoolean(false);
 
             patientViewModel.getAllPatients().observe(this, new Observer<List<Patient>>() {
                 @Override
@@ -75,20 +75,19 @@ public class UpdatePatientInfo extends AppCompatActivity {
                         if (patientIDValue==patient.getPatientID())
                         {
                             found.set(true);
+                            Toast.makeText(UpdatePatientInfo.this, "Patient Info Updated", Toast.LENGTH_SHORT).show();
                             Patient newPatient = new Patient(firstNameValue,lastNameValue,departmentValue,nurseIDValue,roomValue);
-                            newPatient.setPatientID(patientIDValue);
+                            newPatient.setPatientID(patient.getPatientID());
                             patientViewModel.update(newPatient);
-                            break;
                         }
+                    }
+
+                    if (!found.get()){
+                        Toast.makeText(UpdatePatientInfo.this, "No Patient Found", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
 
-            if (found.get()){
-                Toast.makeText(UpdatePatientInfo.this, "Patient Found", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(UpdatePatientInfo.this, "No Patient Found", Toast.LENGTH_SHORT).show();
-            }
 
 
         }
