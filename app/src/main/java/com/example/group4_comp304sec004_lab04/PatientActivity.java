@@ -17,7 +17,7 @@ public class PatientActivity extends AppCompatActivity {
     private EditText department;
     private EditText nurseID;
     private EditText room;
-    Button viewPatients, enterTest;
+    Button viewPatients, enterTest, updatePatient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +28,20 @@ public class PatientActivity extends AppCompatActivity {
 
         viewPatients = findViewById(R.id.viewPatient);
         enterTest = findViewById(R.id.enterTest);
+        updatePatient = findViewById(R.id.updatePatientPI);
 
         enterTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), TestActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        updatePatient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), UpdatePatientInfo.class);
                 startActivity(intent);
             }
         });
@@ -63,7 +72,6 @@ public class PatientActivity extends AppCompatActivity {
             String roomValue = room.getText().toString();
 
             patientViewModel.insert(new Patient(firstNameValue, lastNameValue, departmentValue, nurseIDValue, roomValue));
-            finish();
         }
         else {
             Toast.makeText(PatientActivity.this, "Please ensure there are no null values", Toast.LENGTH_SHORT).show();

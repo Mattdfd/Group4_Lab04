@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             nurseViewModel.getAllNurses().observe(this, new Observer<List<Nurse>>() {
                 @Override
                 public void onChanged(@Nullable List<Nurse> nurses) {
-                    String output = "";
+                    String output = "***********List of available nurses**********\n";
                     for (Nurse nurse : nurses) {
                         output += "Id: "+nurse.getNurseId()+" | Name: "+nurse.getFirstname() + " " + nurse.getLastname() +" | Dep: "
                                 +nurse.getDepartment()+" | Pass: "+nurse.getPassword()+"\n";

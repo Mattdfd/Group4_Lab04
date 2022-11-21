@@ -62,7 +62,6 @@ public class TestActivity extends AppCompatActivity {
             int tempratureValue = Integer.parseInt(temprature.getText().toString());
 
             testViewModel.insert(new Test(patientIdValue,nurseIdValue,bplValue,bphValue,tempratureValue));
-            finish();
         }
         else {
             Toast.makeText(TestActivity.this, "Please ensure there are no null values", Toast.LENGTH_SHORT).show();

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PatientActivity">
+    tools:context=".UpdatePatientInfo">
 
     <TextView
         android:id="@+id/personalInfo"
@@ -12,87 +12,85 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_centerHorizontal="true"
-        android:text="Personal Information" />
+        android:text="Patient Information" />
 
     <EditText
-        android:id="@+id/firstName"
+        android:id="@+id/patientIdUI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/personalInfo"
+        android:hint="Enter Patient ID"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/firstNameUI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/patientIdUI"
         android:hint="Enter First Name"
         android:ems="10"
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/lastName"
+        android:id="@+id/lastNameUI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/firstName"
+        android:layout_below="@+id/firstNameUI"
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="Enter Last Name"/>
 
     <EditText
-        android:id="@+id/department"
+        android:id="@+id/departmentUI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/lastName"
+        android:layout_below="@+id/lastNameUI"
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="Enter Departmetnt" />
 
     <EditText
-        android:id="@+id/nurseID"
+        android:id="@+id/nurseIDUI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/department"
+        android:layout_below="@+id/departmentUI"
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="Enter Nurse ID" />
 
     <EditText
-        android:id="@+id/room"
+        android:id="@+id/roomUI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/nurseID"
+        android:layout_below="@+id/nurseIDUI"
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="Enter Room" />
 
     <Button
-        android:id="@+id/enterPatient"
-        android:layout_width="match_parent"
+        android:id="@+id/updatePatient"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="createPatientButton"
-        android:layout_below="@+id/room"
+        android:onClick="updatePatientButton"
+        android:layout_below="@+id/roomUI"
         android:layout_centerHorizontal="true"
-        android:text="ADD PATIENT"/>
+        android:text="UPDATE PATIENT"/>
+
     <Button
-        android:id="@+id/viewPatient"
-        android:layout_width="match_parent"
+        android:id="@+id/viewPatientUI"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/updatePatientPI"
+        android:layout_below="@+id/updatePatient"
         android:layout_centerHorizontal="true"
         android:text="VIEW PATIENTS"/>
 
     <Button
-        android:id="@+id/enterTest"
-        android:layout_width="match_parent"
+        android:id="@+id/enterTestUI"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/viewPatient"
+        android:layout_below="@+id/viewPatientUI"
         android:layout_centerHorizontal="true"
         android:text="ENTER OR VIEW TEST DATA"/>
-
-    <Button
-        android:id="@+id/updatePatientPI"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/enterPatient"
-        android:layout_centerHorizontal="true"
-        android:text="Update Patient"/>
-
-
-
-
 
 </RelativeLayout>
