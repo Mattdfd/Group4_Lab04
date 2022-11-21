@@ -18,6 +18,7 @@ public class ViewPatientInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_patient);
+        setTitle("Patient List");
 
         patientViewModel = ViewModelProviders.of(this).get(PatientViewModel.class);
         patientList = (TextView) findViewById(R.id.patientList);

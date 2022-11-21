@@ -8,72 +8,20 @@
 
     <Button
         android:id="@+id/loginButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:text="Login" />
 
     <Button
-        android:id="@+id/AddNurseButton"
-        android:layout_width="wrap_content"
+        android:id="@+id/viewNurseButton"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/loginButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:text="Add New Nurse" />
-
-
-    <TextView
-        android:id="@+id/nurseList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:textSize="20dp"
-        android:textColor="@color/black"
-        android:background="@color/white"
-        android:layout_below="@+id/password"
-        android:layout_centerHorizontal="true"
-        />
-
-    <EditText
-        android:id="@+id/firstName"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:inputType="textPersonName"
-        android:layout_centerHorizontal="true"
-        android:hint="Enter First Name"
-        android:layout_below="@+id/AddNurseButton" />
-
-    <EditText
-        android:id="@+id/lastName"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:inputType="textPersonName"
-        android:layout_centerHorizontal="true"
-        android:hint="Enter Last Name"
-        android:layout_below="@+id/firstName" />
-
-    <EditText
-        android:id="@+id/department"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:inputType="textPersonName"
-        android:layout_centerHorizontal="true"
-        android:hint="Enter Department"
-        android:layout_below="@+id/lastName" />
-
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:inputType="textPersonName"
-        android:layout_centerHorizontal="true"
-        android:hint="Create Password"
-        android:layout_below="@+id/department" />
+        android:text="ADD OR VIEW NURSE" />
 
 </RelativeLayout>

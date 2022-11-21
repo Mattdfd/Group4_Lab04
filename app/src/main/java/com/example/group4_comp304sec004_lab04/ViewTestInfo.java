@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ViewTestInfo extends AppCompatActivity {
     private TestViewModel testViewModel;
@@ -24,6 +25,7 @@ public class ViewTestInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_test_info);
+        setTitle("Find Test Page");
 
         testViewModel = ViewModelProviders.of(this).get(TestViewModel.class);
         patientID = (EditText) findViewById(R.id.enterPatientIdVT);
@@ -38,28 +40,37 @@ public class ViewTestInfo extends AppCompatActivity {
     }
 
     public void findTestInfo(){
+        AtomicBoolean found = new AtomicBoolean(false);
         testList = (TextView) findViewById(R.id.testListVTI);
-        int id = Integer.parseInt(patientID.getText().toString());
-        testViewModel.getAllTests().observe(this, (Observer<List<Test>>) tests -> {
-            for (Test test : tests)
-            {
-                if (test.getPatientId()==id){
-                    Toast.makeText(this, "Test Found", Toast.LENGTH_SHORT).show();
-                    testViewModel.getAllTests().observe(this, new Observer<List<Test>>() {
-                        @Override
-                        public void onChanged(@Nullable List<Test> tests) {
-                            String output = "";
-                            for (Test test : tests) {
-                                output += "Test ID: "+test.getTestId()+" | Patient ID: "+test.getPatientId() + " | Nurse ID: " + test.getNurseId() +" | BPL: "
-                                        +test.getBPL()+" | BPH: "+test.getBPH()+" | Temprature: "+test.getTemperature()+"\n";
+        if(patientID.getText().toString().isEmpty()){
+            testList.setText("Please enter a patient ID");
+            Toast.makeText(this, "Patient Id Needed", Toast.LENGTH_SHORT).show();
+        } else {
+            int id = Integer.parseInt(patientID.getText().toString());
+            testViewModel.getAllTests().observe(this, (Observer<List<Test>>) tests -> {
+                for (Test test : tests) {
+                    if (test.getPatientId() == id) {
+                        found.set(true);
+                        testViewModel.getAllTests().observe(this, new Observer<List<Test>>() {
+                            @Override
+                            public void onChanged(@Nullable List<Test> tests) {
+                                String output = "Test ID: " + test.getTestId() + " | Patient ID: " + test.getPatientId() + " | Nurse ID: " + test.getNurseId() + " | BPL: "
+                                        + test.getBPL() + " | BPH: " + test.getBPH() + " | Temprature: " + test.getTemperature() + "\n";
+                                testList.setText(output);
                             }
-                            testList.setText(output);
-                        }
-                    });
-                }else {
+                        });
+                        break;
+                    } else {
+                        testList.setText("Not Tests Found");
+                    }
+                }
+
+                if (found.get()) {
+                    Toast.makeText(this, "Test Found", Toast.LENGTH_SHORT).show();
+                } else {
                     Toast.makeText(this, "Test Not Found", Toast.LENGTH_SHORT).show();
                 }
-            }
-        });
+            });
+        }
     }
 }

@@ -40,7 +40,7 @@
         android:layout_below="@+id/bpl"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Enter BPL" />
+        android:hint="Enter BPH" />
 
     <EditText
         android:id="@+id/temprature"
@@ -53,7 +53,7 @@
 
     <Button
         android:id="@+id/addTest"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/temprature"
         android:layout_centerHorizontal="true"
@@ -61,7 +61,7 @@
 
     <Button
         android:id="@+id/viewTest"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/addTest"
         android:layout_centerHorizontal="true"

@@ -70,7 +70,7 @@
 
     <Button
         android:id="@+id/updatePatient"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="updatePatientButton"
         android:layout_below="@+id/roomUI"
@@ -79,7 +79,7 @@
 
     <Button
         android:id="@+id/viewPatientUI"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/updatePatient"
         android:layout_centerHorizontal="true"
@@ -87,7 +87,7 @@
 
     <Button
         android:id="@+id/enterTestUI"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/viewPatientUI"
         android:layout_centerHorizontal="true"

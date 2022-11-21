@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class UpdatePatientInfo extends AppCompatActivity {
     private PatientViewModel patientViewModel;
@@ -65,6 +66,7 @@ public class UpdatePatientInfo extends AppCompatActivity {
             String departmentValue = department.getText().toString();
             int nurseIDValue = Integer.parseInt(nurseID.getText().toString());
             String roomValue = room.getText().toString();
+            AtomicBoolean found = new AtomicBoolean(false);
 
             patientViewModel.getAllPatients().observe(this, new Observer<List<Patient>>() {
                 @Override
@@ -72,16 +74,21 @@ public class UpdatePatientInfo extends AppCompatActivity {
                     for (Patient patient : patients) {
                         if (patientIDValue==patient.getPatientID())
                         {
+                            found.set(true);
                             Patient newPatient = new Patient(firstNameValue,lastNameValue,departmentValue,nurseIDValue,roomValue);
                             newPatient.setPatientID(patientIDValue);
                             patientViewModel.update(newPatient);
                             break;
-                        } else {
-                            Toast.makeText(UpdatePatientInfo.this, "No Patient With This ID Found", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
             });
+
+            if (found.get()){
+                Toast.makeText(UpdatePatientInfo.this, "Patient Found", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(UpdatePatientInfo.this, "No Patient Found", Toast.LENGTH_SHORT).show();
+            }
 
 
         }

@@ -14,6 +14,9 @@
         android:theme="@style/Theme.Group4_Comp304Sec004_Lab04"
         tools:targetApi="31">
         <activity
+            android:name=".NurseActivity"
+            android:exported="false" />
+        <activity
             android:name=".UpdatePatientInfo"
             android:exported="false" />
         <activity
